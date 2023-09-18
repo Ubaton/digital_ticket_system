@@ -72,12 +72,15 @@ const Services = () => {
                 onSelectTime={(time) => handleTimeChange(time, style.id)}
               />
               <div className="py-2">
-                <button
-                  // onClick={() => /* Add your booking logic here */}
-                  className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
-                >
-                  Book Now
-                </button>
+                <Link to="/ticket">
+                  {" "}
+                  <button
+                    // onClick={() => /* Add your booking logic here */}
+                    className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+                  >
+                    Book Now
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
