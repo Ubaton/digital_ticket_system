@@ -15,13 +15,13 @@ const DateSelection = ({ selectedDate, onSelectDate }) => {
       </label>
       <div className="relative">
         <DatePicker
-          selected={selectedDate}
+          selected={selectedDate || ""}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
           calendarClassName="absolute z-10 mt-2"
         />
-        <span className="absolute right-2 top-2 text-gray-400">
+        <span className="absolute right-2 top-2 text-gray-700">
           <CalendarDays className="w-6 h-6" />
         </span>
       </div>
