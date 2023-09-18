@@ -34,7 +34,7 @@ const Services = () => {
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
       <Navbar className="fixed" />
-      <div className="container mx-auto p-4 overflow-y-auto">
+      <div className="container py-24 mx-auto p-4 overflow-y-auto">
         {/* Search Input */}
         <div className="mb-4 relative">
           <input

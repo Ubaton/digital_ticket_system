@@ -57,21 +57,21 @@ const haircutStylesData = [
   },
   {
     id: 9,
-    name: "Bob Cut",
+    name: "Braided Crown",
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
   },
   {
     id: 10,
-    name: "Bob Cut",
+    name: "Afro",
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
   },
   {
     id: 11,
-    name: "Bob Cut",
+    name: "Side Swept Bangs",
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user

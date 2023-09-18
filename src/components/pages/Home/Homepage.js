@@ -9,7 +9,7 @@ const Homepage = () => {
       <Navbar />
       <div className="container mx-auto p-4">
         <div className="text-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 pt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 pt-24">
             <div>
               <h1 className="text-4xl text-customColor-colortext md:text-6xl text-left font-bold mb-2">
                 Welcome to Our
@@ -20,11 +20,11 @@ const Homepage = () => {
               </p>
             </div>
             <div className="w-60 h-60">
-              <img src={Logo} alt="Logo" className="max-w-full" />
+              <img src={Logo} alt="Logo" className="max-w-full " />
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col space-y-4 md:flex-row md:space-x-4">
+          <div className="mt-20 flex flex-col space-y-4 md:flex-row md:space-x-4">
             <Link to="/services">
               <button className="w-full md:w-auto text-zinc-950 bg-customColor-action hover:bg-customColor-hover py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border--700 transition duration-300">
                 Choose Haircut

@@ -1,5 +1,12 @@
-// Navbar.js
-import { Contact, Home, Scissors, Star, X, Menu } from "lucide-react";
+import {
+  Contact,
+  Home,
+  Scissors,
+  Star,
+  X,
+  Menu,
+  TicketIcon,
+} from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-zinc-800 rounded-b-lg p-4 z-10">
+    <nav className="bg-zinc-800 rounded-b-lg p-4 z-10 fixed top-0 w-full">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-xl">Barbershop</div>
 
@@ -46,6 +53,12 @@ const Navbar = () => {
             About
           </Link>
           <Link
+            to="/ticket"
+            className="text-customColor-colortext hover:text-customColor-hover"
+          >
+            Ticket
+          </Link>
+          <Link
             href="/contact"
             className="text-customColor-colortext hover:text-gray-300"
           >
@@ -57,28 +70,40 @@ const Navbar = () => {
       {/* Mobile Menu (shown on mobile when the button is clicked) */}
       {isOpen && (
         <div className="sm:hidden mt-2">
-          <a href="/" className="block text-customColor-colortext py-2">
+          <Link to="/" className="block text-customColor-colortext py-2">
             <span className="flex">
               <Home className="mr-2" />
               Home
             </span>
-          </a>
-          <a href="/services" className="block text-customColor-colortext py-2">
+          </Link>
+          <Link
+            to="/services"
+            className="block text-customColor-colortext py-2"
+          >
             <span className="flex">
               <Scissors className="mr-2" /> Services
             </span>
-          </a>
-          <a href="/about" className="block text-customColor-colortext py-2">
+          </Link>
+          <Link to="/about" className="block text-customColor-colortext py-2">
             <span className="flex">
               <Star className="mr-2" />
               About
             </span>
-          </a>
-          <a href="/contact" className="block text-customColor-colortext py-2">
+          </Link>
+          <Link
+            to="/ticket"
+            className="text-customColor-colortext hover:text-customColor-hover"
+          >
+            <span className="flex">
+              <TicketIcon className="mr-2" />
+              Ticket
+            </span>
+          </Link>
+          <Link to="/contact" className="block text-customColor-colortext py-2">
             <span className="flex">
               <Contact className="mr-2" /> Contact
             </span>
-          </a>
+          </Link>
         </div>
       )}
     </nav>
