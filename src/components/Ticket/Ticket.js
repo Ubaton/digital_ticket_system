@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Ticket = () => {
   return (
@@ -20,9 +21,11 @@ const Ticket = () => {
             Time: {new Date().toLocaleTimeString()}
           </div>
         </div>
-        <button className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300">
-          Confairm Booking
-        </button>
+        <Link to="">
+          <button className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300">
+            Confairm Booking
+          </button>
+        </Link>
       </div>
     </div>
   );

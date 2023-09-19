@@ -5,6 +5,7 @@ const haircutStylesData = [
     description: "Timeless and versatile haircut.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 30,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const haircutStylesData = [
     description: "Clean and stylish fade haircut.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 65,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const haircutStylesData = [
     description: "Short and low-maintenance crop style.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 45,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ const haircutStylesData = [
     description: "Elegant and flowing long layers.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 80,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ const haircutStylesData = [
     description: "Short and easy-to-maintain buzz cut.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 40,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ const haircutStylesData = [
     description: "Classic pompadour style for a retro look.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 60,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ const haircutStylesData = [
     description: "Short and neat crew cut style.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 50,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ const haircutStylesData = [
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 45,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ const haircutStylesData = [
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 35,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ const haircutStylesData = [
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 30,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ const haircutStylesData = [
     description: "Chic and trendy bob haircut for women.",
     date: null, // Date selected by the user
     time: null, // Time selected by the user
+    price: 70,
   },
   // Add more haircut style data as needed
 ];

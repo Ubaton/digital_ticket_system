@@ -5,6 +5,8 @@ import Login from "./components/Authentication/Login";
 import SignUp from "./components/Authentication/SignUp";
 import Services from "./components/pages/Services/Services";
 import Ticket from "./components/Ticket/Ticket";
+import OfferSelection from "./components/Selection/OfferSelection";
+// import Checkout from "./components/CheckOut/CheckOut";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/ticket" element={<Ticket />} />
+        <Route path="/offerselection" element={<OfferSelection />} />
+        {/* <Route path="/checkout" element={<Checkout />} /> */}
       </Routes>
     </Router>
   );

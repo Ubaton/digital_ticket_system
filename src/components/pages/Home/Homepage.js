@@ -39,7 +39,7 @@ const Homepage = () => {
           <p className="text-gray-700">
             Check out our special offers and promotions for a limited time.
           </p>
-          <Link to="/offers" className="text-amber-500 hover:underline">
+          <Link to="/offerselection" className="text-amber-500 hover:underline">
             View Offers
           </Link>
         </section>

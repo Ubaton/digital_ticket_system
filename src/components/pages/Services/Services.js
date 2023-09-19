@@ -33,14 +33,14 @@ const Services = () => {
 
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
-      <Navbar className="fixed" />
-      <div className="container py-24 mx-auto p-4 overflow-y-auto">
+      <Navbar />
+      <div className="container py-24 mx-auto p-4 overflow-y-auto relative">
         {/* Search Input */}
         <div className="mb-4 relative">
           <input
             type="text"
             placeholder="Search Haircuts"
-            className="w-full px-3 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+            className="w-full  px-3 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 sticky top-0"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -73,7 +73,6 @@ const Services = () => {
               />
               <div className="py-2">
                 <Link to="/ticket">
-                  {" "}
                   <button
                     // onClick={() => /* Add your booking logic here */}
                     className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
@@ -81,6 +80,7 @@ const Services = () => {
                     Book Now
                   </button>
                 </Link>
+                <span className="text-2xl pl-14">R{style.price}</span>
               </div>
             </div>
           ))}
