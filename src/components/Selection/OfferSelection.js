@@ -13,7 +13,7 @@ const OfferSelection = ({ selectedOffer, onSelectOffer }) => {
       <Navbar />
       <div className="container py-24 mx-auto">
         <h2 className="text-2xl font-semibold mb-4">Select an Offer</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-4">
           {offers.map((offer) => (
             <div
               key={offer.id}

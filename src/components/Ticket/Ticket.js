@@ -6,8 +6,8 @@ const Ticket = () => {
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
       <Navbar />
-      <div className="flex flex-col space-y-2  justify-center items-center h-screen">
-        <div className="bg-white border border-gray-400 rounded-lg p-6 shadow-lg">
+      <div className="flex flex-col space-y-2 justify-center items-center h-screen">
+        <div className="bg-white border border-gray-400 rounded-lg p-6 shadow-lg m-4">
           <h1 className="text-xl font-bold mb-4">Your Ticket</h1>
           <div className="text-gray-700">
             {/* Your ticket content goes here */}
