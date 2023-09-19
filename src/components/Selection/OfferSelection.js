@@ -3,16 +3,33 @@ import Navbar from "../Navbar/Navbar";
 
 const OfferSelection = ({ selectedOffer, onSelectOffer }) => {
   const [offers] = useState([
-    { id: 1, name: "Standard Haircut", price: 30 },
-    { id: 2, name: "Premium Haircut", price: 40 },
-    { id: 3, name: "Deluxe Haircut", price: 50 },
+    {
+      id: 1,
+      name: "Standard Haircut",
+      price: 30,
+      description: "Basic haircut package",
+    },
+    {
+      id: 2,
+      name: "Premium Haircut",
+      price: 40,
+      description: "Premium haircut package with additional services",
+    },
+    {
+      id: 3,
+      name: "Deluxe Haircut",
+      price: 50,
+      description: "Luxurious haircut package with exclusive treatments",
+    },
   ]);
 
   return (
     <div className="bg-primary h-screen">
       <Navbar />
       <div className="container py-24 mx-auto">
-        <h2 className="text-2xl font-semibold mb-4">Select an Offer</h2>
+        <h2 className="text-2xl font-semibold mb-4 m-4 text-customColor-colortext">
+          Select an Offer
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-4">
           {offers.map((offer) => (
             <div
@@ -26,6 +43,12 @@ const OfferSelection = ({ selectedOffer, onSelectOffer }) => {
             >
               <h3 className="text-xl font-semibold">{offer.name}</h3>
               <p className="text-gray-700">Price: ${offer.price}</p>
+              {selectedOffer && selectedOffer.id === offer.id && (
+                <div className="mt-4">
+                  <p className="font-semibold">Description:</p>
+                  <p>{offer.description}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -13,7 +13,9 @@ const Homepage = () => {
             <div>
               <h1 className="text-4xl text-customColor-colortext md:text-6xl text-left font-bold mb-2">
                 Welcome to Our
-                <br /> Barbershop
+                <br /> Barbershop Cut your Hair with
+                <br />
+                Pride
               </h1>
               <p className="text-lg text-zinc-50 text-left mb-8 pt-2">
                 Choose from our haircut styles below:
@@ -24,7 +26,7 @@ const Homepage = () => {
             </div>
           </div>
 
-          <div className="mt-20 flex flex-col space-y-4 md:flex-row md:space-x-4">
+          <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
             <Link to="/services">
               <button className="w-full md:w-auto text-zinc-950 bg-customColor-action hover:bg-customColor-hover py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border--700 transition duration-300">
                 Choose Haircut
@@ -34,11 +36,9 @@ const Homepage = () => {
         </div>
 
         {/* Latest Offers Section */}
-        <section className="bg-customColor-hover p-4 rounded-lg shadow-lg mt-6">
+        <section className=" bg-customColor-cardcolor text-customColor-colortext p-4 rounded-lg shadow-lg mt-6">
           <h2 className="text-2xl font-semibold mb-2">Latest Offers</h2>
-          <p className="text-gray-700">
-            Check out our special offers and promotions for a limited time.
-          </p>
+          <p>Check out our special offers and promotions for a limited time.</p>
           <Link to="/offerselection" className="text-amber-500 hover:underline">
             View Offers
           </Link>

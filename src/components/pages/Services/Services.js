@@ -50,7 +50,7 @@ const Services = () => {
         </div>
 
         {/* Haircut Style Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-customColor-colortext">
           {filteredStyles.map((style) => (
             <div
               key={style.id}
@@ -58,10 +58,14 @@ const Services = () => {
                 style.name.toLowerCase().includes(searchQuery.toLowerCase())
                   ? ""
                   : ""
-              } bg-zinc-200 p-4 rounded-lg shadow-lg  transition duration-300`}
+              } bg-customColor-cardcolor p-4 rounded-lg shadow-lg  transition duration-300`}
             >
-              <h2 className="text-2xl font-semibold mb-2">{style.name}</h2>
-              <p className="text-gray-700">{style.description}</p>
+              <h2 className="text-2xl text-customColor-colortext font-semibold mb-2">
+                {style.name}
+              </h2>
+              <p className=" text-customColor-colortext ">
+                {style.description}
+              </p>
               {/* Date and Time Selection */}
               <DateSelection
                 selectedDate={style.date}
@@ -71,7 +75,7 @@ const Services = () => {
                 selectedTime={style.time}
                 onSelectTime={(time) => handleTimeChange(time, style.id)}
               />
-              <div className="py-2">
+              <div className="flex-row items-center justify-center inline-flex py-2">
                 <Link to="/ticket">
                   <button
                     // onClick={() => /* Add your booking logic here */}

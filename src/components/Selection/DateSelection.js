@@ -10,7 +10,7 @@ const DateSelection = ({ selectedDate, onSelectDate }) => {
 
   return (
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2">
+      <label className="block text-customColor-colortext  text-sm font-bold mb-2">
         Select Date :
       </label>
       <div className="relative">
@@ -18,11 +18,11 @@ const DateSelection = ({ selectedDate, onSelectDate }) => {
           selected={selectedDate || ""}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
+          className="w-full px-3 bg-primary3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
           calendarClassName="absolute z-10 mt-2"
         />
         <span className="absolute right-2 top-2 text-gray-700">
-          <CalendarDays className="w-6 h-6" />
+          <CalendarDays className=" text-customColor-colortext w-6 h-6" />
         </span>
       </div>
     </div>

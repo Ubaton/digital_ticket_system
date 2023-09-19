@@ -19,15 +19,15 @@ const TimeSelection = ({ selectedTime, onSelectTime }) => {
   return (
     <div className="mt-2">
       <label className="block text-gray-700 text-sm font-bold mb-2">
-        <span className="flex items-center ">
+        <span className="flex text-customColor-colortext items-center ">
           <Clock8 />
-          <span className="px-2">Select Time:</span>
+          <span className="text-customColor-colortext px-2">Select Time:</span>
         </span>
       </label>
       <select
         value={selectedTime || ""}
         onChange={(e) => onSelectTime(e.target.value)}
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+        className="w-full px-3 py-2 bg-primary3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
       >
         <option value="">Select a time</option>
         {sortedTimeOptions.map((time, index) => (
