@@ -6,13 +6,13 @@ import Navbar from "../../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 
-const Services = () => {
+const Services = ({ selectedHaircut }) => {
   const { haircutStylesData, setHaircutStylesData } = haircutData;
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedHaircut, setSelectedHaircut] = useState(null);
 
   const handleBookNow = (haircut) => {
-    setSelectedHaircut(haircut);
+    console.log(`Selected Haircut: ${haircut.name}`);
+    // Do something with the selectedHaircut, if needed
   };
 
   const handleDateChange = (date, haircutId) => {
@@ -83,7 +83,12 @@ const Services = () => {
                 onSelectTime={(time) => handleTimeChange(time, style.id)}
               />
               <div className="flex-row items-center justify-center inline-flex py-2">
-                <Link to="/ticket">
+                <Link
+                  to={{
+                    pathname: "/ticket",
+                    state: { selectedHaircut },
+                  }}
+                >
                   <button
                     onClick={() => handleBookNow(style)}
                     className="bg-customColor-action hover:bg-customColor-hover text-white py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
@@ -91,6 +96,7 @@ const Services = () => {
                     Book Now
                   </button>
                 </Link>
+
                 <span className="text-2xl pl-14">R{style.price}</span>
               </div>
             </div>
