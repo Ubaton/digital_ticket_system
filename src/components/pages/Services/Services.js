@@ -66,6 +66,15 @@ const Services = () => {
               <p className=" text-customColor-colortext ">
                 {style.description}
               </p>
+              <div className="flex items-center justify-center ">
+                {" "}
+                <img
+                  src={style.image}
+                  alt={style.name}
+                  className="p-2 w-20 h-auto"
+                />
+              </div>
+
               {/* Date and Time Selection */}
               <DateSelection
                 selectedDate={style.date}
