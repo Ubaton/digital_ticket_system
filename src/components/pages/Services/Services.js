@@ -8,7 +8,12 @@ import { Search } from "lucide-react";
 
 const Services = () => {
   const { haircutStylesData, setHaircutStylesData } = haircutData;
-  const [searchQuery, setSearchQuery] = useState(""); // State for the search query
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedHaircut, setSelectedHaircut] = useState(null);
+
+  const handleBookNow = (haircut) => {
+    setSelectedHaircut(haircut);
+  };
 
   const handleDateChange = (date, haircutId) => {
     setHaircutStylesData((prevStyles) =>
@@ -54,20 +59,13 @@ const Services = () => {
           {filteredStyles.map((style) => (
             <div
               key={style.id}
-              className={`${
-                style.name.toLowerCase().includes(searchQuery.toLowerCase())
-                  ? ""
-                  : ""
-              } bg-customColor-cardcolor p-4 rounded-lg shadow-lg  transition duration-300`}
+              className="bg-customColor-cardcolor p-4 rounded-lg shadow-lg transition duration-300"
             >
               <h2 className="text-2xl text-customColor-colortext font-semibold mb-2">
                 {style.name}
               </h2>
-              <p className=" text-customColor-colortext ">
-                {style.description}
-              </p>
-              <div className="flex items-center justify-center ">
-                {" "}
+              <p className="text-customColor-colortext">{style.description}</p>
+              <div className="flex items-center justify-center">
                 <img
                   src={style.image}
                   alt={style.name}
@@ -87,8 +85,8 @@ const Services = () => {
               <div className="flex-row items-center justify-center inline-flex py-2">
                 <Link to="/ticket">
                   <button
-                    // onClick={() => /* Add your booking logic here */}
-                    className="bg-customColor-action hover:bg-customColor-hover text-white  py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+                    onClick={() => handleBookNow(style)}
+                    className="bg-customColor-action hover:bg-customColor-hover text-white py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
                   >
                     Book Now
                   </button>
@@ -102,7 +100,7 @@ const Services = () => {
       {filteredStyles.map((style) => (
         <Link
           key={style.id}
-          to={`/services/${style.id}`} // Link to the specific haircut style
+          to={`/services/${style.id}`}
           className="block text-customColor-colortext py-2"
         ></Link>
       ))}
