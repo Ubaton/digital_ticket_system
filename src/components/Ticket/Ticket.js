@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Award from "../assets/icons/Award.png";
 
 const Ticket = ({ selectedHaircut }) => {
   return (
@@ -8,7 +9,11 @@ const Ticket = ({ selectedHaircut }) => {
       <Navbar />
       <div className="flex flex-col space-y-2 justify-center items-center h-screen">
         <div className="bg-customColor-cardcolor text-customColor-colortext border border-gray-700 rounded-lg p-6 shadow-lg m-4">
-          <h1 className="text-xl font-bold mb-4">Your Ticket</h1>
+          <span>
+            <h1 className="flex flex-row items-center gap-4 text-xl font-bold mb-4">
+              Your Ticket <img className="w-8" src={Award} alt="" />
+            </h1>
+          </span>
           {selectedHaircut ? (
             <div>
               <p>Name: {selectedHaircut.name}</p>
