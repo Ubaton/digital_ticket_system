@@ -22,7 +22,9 @@ const Navbar = () => {
     <nav className="bg-zinc-800 rounded-b-lg p-4 z-10 fixed top-0 w-full">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center w-20 ">
-          <img cla src={LogoTop} alt="BarberShop" />
+          <Link to="/">
+            <img src={LogoTop} alt="BarberShop" />
+          </Link>
         </div>
 
         {/* Mobile Menu Button (hidden on desktop) */}

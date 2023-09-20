@@ -11,6 +11,8 @@ const Services = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedHaircut, setSelectedHaircut] = useState(null);
 
+  console.log("Passing to Ticket:", selectedHaircut);
+
   const handleBookNow = (haircut) => {
     console.log(`Selected Haircut: ${haircut.name}`);
     setSelectedHaircut(haircut);
