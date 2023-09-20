@@ -78,6 +78,7 @@ const Services = () => {
                   type="radio"
                   name="haircutSelection"
                   onClick={() => handleHaircutSelection(style)}
+                  checked={selectedHaircut && selectedHaircut.id === style.id}
                 />
               </label>
               <div className="flex items-center justify-center">
@@ -105,6 +106,7 @@ const Services = () => {
                 >
                   <button
                     onClick={() => handleBookNow(style)}
+                    disabled={!selectedHaircut}
                     className="bg-customColor-action hover:bg-customColor-hover text-white py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
                   >
                     Book Now
