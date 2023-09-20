@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import LogoTop from "../assets/images/Logotop.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,9 @@ const Navbar = () => {
   return (
     <nav className="bg-zinc-800 rounded-b-lg p-4 z-10 fixed top-0 w-full">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white font-bold text-xl">Barbershop</div>
+        <div className="flex items-center w-20 ">
+          <img cla src={LogoTop} alt="BarberShop" />
+        </div>
 
         {/* Mobile Menu Button (hidden on desktop) */}
         <div className="block sm:hidden">
