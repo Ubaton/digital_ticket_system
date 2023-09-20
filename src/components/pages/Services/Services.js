@@ -37,6 +37,10 @@ const Services = () => {
     style.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleHaircutSelection = (style) => {
+    setSelectedHaircut(style);
+  };
+
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
       <Navbar />
@@ -46,7 +50,7 @@ const Services = () => {
           <input
             type="text"
             placeholder="Search Haircuts"
-            className="w-full  px-3 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 sticky top-0"
+            className="w-full px-3 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 sticky top-0"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -62,10 +66,20 @@ const Services = () => {
               key={style.id}
               className="bg-customColor-cardcolor p-4 rounded-lg shadow-lg transition duration-300"
             >
+              {" "}
               <h2 className="text-2xl text-customColor-colortext font-semibold mb-2">
                 {style.name}
               </h2>
+              <span className="flex flex-row items-center space-x-4"></span>
               <p className="text-customColor-colortext">{style.description}</p>
+              <label className="flex font-semibold items-center space-x-2">
+                <span>Select</span>
+                <input
+                  type="radio"
+                  name="haircutSelection"
+                  onClick={() => handleHaircutSelection(style)}
+                />
+              </label>
               <div className="flex items-center justify-center">
                 <img
                   src={style.image}
@@ -73,7 +87,6 @@ const Services = () => {
                   className="p-2 w-20 h-auto"
                 />
               </div>
-
               {/* Date and Time Selection */}
               <DateSelection
                 selectedDate={style.date}

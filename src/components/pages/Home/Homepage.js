@@ -35,7 +35,10 @@ const Homepage = () => {
         <section className="bg-customColor-cardcolor w-full text-customColor-colortext p-4 rounded-lg shadow-lg mt-20 md:mt-16 text-center">
           <h2 className="text-2xl font-semibold mb-2">Latest Offers</h2>
           <p>Check out our special offers and promotions for a limited time.</p>
-          <Link to="/offerselection" className="text-amber-500 hover:underline">
+          <Link
+            to="/offerselection"
+            className="text-amber-500 font-semibold hover:underline"
+          >
             View Offers
           </Link>
         </section>
