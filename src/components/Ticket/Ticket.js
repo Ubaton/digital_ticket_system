@@ -13,10 +13,10 @@ const Ticket = () => {
       <div className="bg-primary overflow-y-auto max-h-screen">
         <Navbar />
         <div className="flex flex-col space-y-2 justify-center items-center h-screen">
-          <div className="bg-customColor-cardcolor text-customColor-colortext border border-gray-700 rounded-lg p-6 shadow-lg m-4">
+          <div className=" relative bg-customColor-cardcolor text-customColor-colortext p-6 shadow-lg m-4">
             <span>
-              <h1 className="flex flex-row items-center gap-4 text-xl font-bold mb-4">
-                Your Ticket <img className="w-8" src={Award} alt="" />
+              <h1 className="flex flex-row items-center gap-4 text-4xl font-bold mb-4">
+                Your Ticket <img className="w-8" src={Award} alt="Award" />
               </h1>
             </span>
             <p>No haircut selected.</p>
@@ -27,6 +27,31 @@ const Ticket = () => {
               Time: {new Date().toLocaleTimeString()}
             </div>
           </div>
+
+          <div className=" absolute flex flex-row items-center pb-[3.5rem] space-x-[16rem]">
+            <div className="container">
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+            </div>
+
+            <div className="container">
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
+            </div>
+          </div>
+
           <Link to="/services">
             <button className="bg-customColor-action hover:bg-customColor-hover text-zinc-700 py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300">
               Go Back to Services
