@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const DateSelection = ({ selectedDate, onSelectDate }) => {
   const handleDateChange = (date) => {
-    onSelectDate(date); // Call the provided callback with the selected date
+    onSelectDate(date);
   };
 
   return (
@@ -18,11 +18,11 @@ const DateSelection = ({ selectedDate, onSelectDate }) => {
           selected={selectedDate || ""}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
-          className="w-full px-3 bg-primary3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
+          className="w-full px-3 bg-primary3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
           calendarClassName="absolute z-10 mt-2"
         />
-        <span className="absolute right-2 top-2 text-gray-700">
-          <CalendarDays className=" text-customColor-colortext w-6 h-6" />
+        <span className="absolute right-2 top-2">
+          <CalendarDays className="text-customColor-colortext w-6 h-6" />
         </span>
       </div>
     </div>

@@ -6,13 +6,14 @@ import Navbar from "../../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 
-const Services = ({ selectedHaircut }) => {
+const Services = () => {
   const { haircutStylesData, setHaircutStylesData } = haircutData;
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedHaircut, setSelectedHaircut] = useState(null);
 
   const handleBookNow = (haircut) => {
     console.log(`Selected Haircut: ${haircut.name}`);
-    // Do something with the selectedHaircut, if needed
+    setSelectedHaircut(haircut);
   };
 
   const handleDateChange = (date, haircutId) => {
