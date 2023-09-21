@@ -64,7 +64,7 @@ const Navbar = () => {
             Ticket
           </Link>
           <Link
-            href="/contact"
+            to="/contact"
             className="text-customColor-colortext hover:text-gray-300"
           >
             Contact
