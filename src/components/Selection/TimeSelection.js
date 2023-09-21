@@ -27,7 +27,7 @@ const TimeSelection = ({ selectedTime, onSelectTime }) => {
       <select
         value={selectedTime || ""}
         onChange={(e) => onSelectTime(e.target.value)}
-        className="w-full px-3 py-2 bg-primary3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+        className="w-full px-3 py-2 bg-primary3 border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
       >
         <option value="">Select a time</option>
         {sortedTimeOptions.map((time, index) => (

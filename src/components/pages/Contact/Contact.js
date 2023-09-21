@@ -61,7 +61,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                  className="w-full px-3 py-2 border bg-primary3 border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
@@ -78,7 +78,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                  className="w-full px-3 py-2 border bg-primary3 border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
@@ -95,7 +95,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                  className="w-full px-3 py-2 border bg-primary3 border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
             </div>
@@ -114,7 +114,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                  className="w-full px-3 py-2 border bg-primary3 border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
@@ -131,7 +131,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                  className="w-full px-3 py-2 border bg-primary3 border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 ></textarea>
               </div>
             </div>
@@ -140,7 +140,7 @@ const Contact = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-customColor-action hover:bg-customColor-hover text-white py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+              className="bg-customColor-action hover:bg-customColor-hover text-gray-700 py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
             >
               Submit
             </button>

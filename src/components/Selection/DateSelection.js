@@ -18,7 +18,7 @@ const DateSelection = ({ selectedDate, onSelectDate }) => {
           selected={selectedDate || ""}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
-          className="w-full px-3 bg-primary3 py-2  border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500 text-gray-700"
+          className="w-full px-3 bg-primary3 py-2  border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2 text-gray-700"
           calendarClassName="absolute z-10 mt-2"
         />
         <span className="absolute right-2 top-2">
