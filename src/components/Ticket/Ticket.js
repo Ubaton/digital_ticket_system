@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Award from "../assets/icons/Award.png";
 import { useLocation } from "react-router-dom";
+import TicketElements from "./TicketelElments";
 
 const Ticket = () => {
   const location = useLocation();
@@ -12,9 +13,9 @@ const Ticket = () => {
     return (
       <div className="bg-primary overflow-y-auto max-h-screen">
         <Navbar />
-        <div className="flex flex-col  space-y-2 justify-center items-center h-screen">
-          <div className=" pt-14 ">
-            <div className=" relative bg-customColor-cardcolor text-customColor-colortext p-6 shadow-lg m-4">
+        <div className="flex flex-col space-y-2 justify-center items-center h-screen">
+          <div className="pt-2">
+            <div className=" relative bg-customColor-cardcolor h-72 w-[17.2rem] text-customColor-colortext p-6 shadow-lg m-4">
               <span>
                 <h1 className="flex flex-row items-center gap-4 text-4xl font-bold mb-4">
                   Your Ticket <img className="w-8" src={Award} alt="Award" />
@@ -30,28 +31,8 @@ const Ticket = () => {
             </div>
           </div>
 
-          <div className=" absolute flex flex-row items-center  space-x-[16rem]">
-            <div className="container">
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-            </div>
-
-            <div className="container">
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-              <div className="bg-customColor-cardcolor w-6 h-6 rotate-45 "></div>
-            </div>
+          <div className="absolute flex flex-row items-center justify-center pr-12 rotate-90">
+            <TicketElements count={11} />
           </div>
 
           <Link to="/services">

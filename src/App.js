@@ -13,7 +13,6 @@ const App = () => {
   // Define onSelectOffer function here
   const onSelectOffer = (selectedOffer) => {
     // Handle the selected offer
-    console.log("Selected Offer: ", selectedOffer);
     // You can perform any further actions here, such as updating state
   };
 
