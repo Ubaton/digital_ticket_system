@@ -91,11 +91,11 @@ const OfferSelection = ({ onSelectOffer }) => {
               key={offer.id}
               onClick={() => {
                 setSelectedOffer(offer);
-                onSelectOffer(offer); // Call the onSelectOffer function when an offer is clicked
+                onSelectOffer(offer);
               }}
               className={`${
                 selectedOffer && selectedOffer.id === offer.id
-                  ? "border-4 border-amber-500"
+                  ? "border-4 border-customColor-hover"
                   : ""
               } bg-customColor-cardcolor p-4 rounded-lg shadow-lg cursor-pointer transition duration-300`}
             >
@@ -103,7 +103,7 @@ const OfferSelection = ({ onSelectOffer }) => {
                 <h3 className="text-xl font-semibold">{offer.name}</h3>
                 <Scissors />
               </span>
-              <p className="">Price: ${offer.price}</p>
+              <p className="">Price: R {offer.price}</p>
               {selectedOffer && selectedOffer.id === offer.id && (
                 <div className="mt-4">
                   <p className="font-semibold">Description:</p>

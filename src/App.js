@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/ticket" element={<Ticket />} />
         <Route
           path="/offerselection"
-          element={<OfferSelection onSelectOffer={onSelectOffer} />} // Pass the onSelectOffer function to OfferSelection
+          element={<OfferSelection onSelectOffer={onSelectOffer} />}
         />
         {/* <Route path="/checkout" element={<Checkout />} /> */}
       </Routes>
