@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { Scissors } from "lucide-react";
 import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const OfferSelection = ({ onSelectOffer }) => {
   const [selectedOffer, setSelectedOffer] = useState(null);
+  const navigate = useNavigate();
 
   const [offers] = useState([
     {
       id: 1,
-      name: "Standard Haircut",
+      name: "Classic Cut",
+      description: "Timeless and versatile haircut.",
+      date: null,
+      time: null,
       price: 30,
-      description: "Basic haircut package",
     },
     {
       id: 2,
@@ -80,6 +84,12 @@ const OfferSelection = ({ onSelectOffer }) => {
     },
   ]);
 
+  const handleSelectOffer = (offer) => {
+    setSelectedOffer(offer);
+    onSelectOffer(offer);
+    navigate("/ticket", { state: { selectedHaircut: offer } });
+  };
+
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
       <Navbar />
@@ -89,10 +99,7 @@ const OfferSelection = ({ onSelectOffer }) => {
           {offers.map((offer) => (
             <div
               key={offer.id}
-              onClick={() => {
-                setSelectedOffer(offer);
-                onSelectOffer(offer);
-              }}
+              onClick={() => handleSelectOffer(offer)}
               className={`${
                 selectedOffer && selectedOffer.id === offer.id
                   ? "border-4 border-customColor-hover"

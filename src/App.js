@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./components/pages/Home/Homepage";
 import Login from "./components/Authentication/Login";
@@ -10,10 +10,12 @@ import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
 
 const App = () => {
-  // Define onSelectOffer function here
-  const onSelectOffer = (selectedOffer) => {
-    // Handle the selected offer
-    // You can perform any further actions here, such as updating state
+  // Define state to hold the selected offer
+  const [selectedOffer, setSelectedOffer] = useState(null);
+
+  // Define onSelectOffer function to handle the selected offer
+  const onSelectOffer = (offer) => {
+    setSelectedOffer(offer);
   };
 
   return (
@@ -25,7 +27,10 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/ticket" element={<Ticket />} />
+        <Route
+          path="/ticket"
+          element={<Ticket selectedHaircut={selectedOffer} />} // Pass selectedOffer as a prop to Ticket
+        />
         <Route
           path="/offerselection"
           element={<OfferSelection onSelectOffer={onSelectOffer} />}
