@@ -40,7 +40,15 @@ const Services = () => {
   );
 
   const handleHaircutSelection = (style) => {
-    setSelectedHaircut(style);
+    setSelectedHaircut((prevSelectedHaircut) => {
+      if (prevSelectedHaircut && prevSelectedHaircut.id === style.id) {
+        // If the same style is clicked again, set the selectedHaircut to null
+        return null;
+      } else {
+        // Otherwise, set the selectedHaircut to the new style
+        return style;
+      }
+    });
   };
 
   return (
@@ -79,8 +87,10 @@ const Services = () => {
                 <input
                   type="radio"
                   name="haircutSelection"
-                  onClick={() => handleHaircutSelection(style)}
-                  checked={selectedHaircut && selectedHaircut.id === style.id}
+                  onChange={() => handleHaircutSelection(style)}
+                  checked={
+                    selectedHaircut && style && selectedHaircut.id === style.id
+                  }
                 />
               </label>
               <div className="flex items-center justify-center">
