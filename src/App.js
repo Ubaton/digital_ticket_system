@@ -8,9 +8,15 @@ import Ticket from "./components/Ticket/Ticket";
 import OfferSelection from "./components/Selection/OfferSelection";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
-// import Checkout from "./components/CheckOut/CheckOut";
 
 const App = () => {
+  // Define onSelectOffer function here
+  const onSelectOffer = (selectedOffer) => {
+    // Handle the selected offer
+    console.log("Selected Offer: ", selectedOffer);
+    // You can perform any further actions here, such as updating state
+  };
+
   return (
     <Router>
       <Routes>
@@ -21,7 +27,10 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/ticket" element={<Ticket />} />
-        <Route path="/offerselection" element={<OfferSelection />} />
+        <Route
+          path="/offerselection"
+          element={<OfferSelection onSelectOffer={onSelectOffer} />} // Pass the onSelectOffer function to OfferSelection
+        />
         {/* <Route path="/checkout" element={<Checkout />} /> */}
       </Routes>
     </Router>
