@@ -32,11 +32,15 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
     <div className="bg-primary">
       <Navbar />
       <div className="flex flex-col items-center justify-center pt-20 w-full overflow-y-auto h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
           <div className="mt-4 p-4">
-            <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
-            <h3 className="text-lg font-semibold mb-2">Selected Item:</h3>
-            <p>
+            <h2 className="text-2xl font-semibold mb-4 text-customColor-colortext">
+              Checkout
+            </h2>
+            <h3 className="text-lg font-semibold mb-2 text-customColor-colortext">
+              Selected Item:
+            </h3>
+            <p className="text-customColor-colortext">
               {selectedHaircut ? (
                 <span>
                   {selectedHaircut.name} - {selectedHaircut.price} R
@@ -45,17 +49,17 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
                 "No item selected"
               )}
             </p>
-            <p className="text-lg font-semibold mt-4">
+            <p className="text-lg font-semibold mt-4 text-customColor-colortext">
               Total Price: {totalPrice} R
             </p>
           </div>
           <div className="mt-4 p-4">
-            <h3 className="text-lg font-semibold mb-2">
+            <h3 className="text-lg font-semibold mb-2 text-customColor-colortext">
               Shipping Information:
             </h3>
             <form>
               <div className="mb-4">
-                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                <label className="block text-customColor-colortext text-sm font-bold mb-2">
                   Name
                 </label>
                 <input
@@ -67,7 +71,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                <label className="block text-customColor-colortext text-sm font-bold mb-2">
                   Address
                 </label>
                 <input
@@ -79,7 +83,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                <label className="block text-customColor-colortext text-sm font-bold mb-2">
                   City
                 </label>
                 <input
@@ -91,7 +95,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                <label className="block text-customColor-colortext text-sm font-bold mb-2">
                   Postal Code
                 </label>
                 <input
@@ -107,7 +111,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
         </div>
         <button
           onClick={handleCheckout}
-          className="bg-blue-500 text-white py-2 px-4 mt-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+          className="w-full md:w-auto text-zinc-950 bg-customColor-action hover:bg-customColor-hover py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
         >
           Proceed to Payment
         </button>
