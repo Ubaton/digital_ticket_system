@@ -8,6 +8,7 @@ import Ticket from "./components/Ticket/Ticket";
 import OfferSelection from "./components/Selection/OfferSelection";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
+import Checkout from "./components/CheckOut/CheckOut";
 
 const App = () => {
   // Define state to hold the selected offer
@@ -17,6 +18,8 @@ const App = () => {
   const onSelectOffer = (offer) => {
     setSelectedOffer(offer);
   };
+
+  const selectedItems = [];
 
   return (
     <Router>
@@ -35,7 +38,10 @@ const App = () => {
           path="/offerselection"
           element={<OfferSelection onSelectOffer={onSelectOffer} />}
         />
-        {/* <Route path="/checkout" element={<Checkout />} /> */}
+        <Route
+          path="/checkout"
+          element={<Checkout selectedItems={selectedItems} />}
+        />
       </Routes>
     </Router>
   );

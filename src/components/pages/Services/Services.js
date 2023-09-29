@@ -3,19 +3,21 @@ import DateSelection from "../../Selection/DateSelection";
 import TimeSelection from "../../Selection/TimeSelection";
 import haircutData from "./Dataservices";
 import Navbar from "../../Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 
 const Services = () => {
   const { haircutStylesData, setHaircutStylesData } = haircutData;
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedHaircut, setSelectedHaircut] = useState(null);
+  const navigate = useNavigate();
 
   console.log("Passing to Ticket:", selectedHaircut);
 
   const handleBookNow = (haircut) => {
     console.log(`Selected Haircut: ${haircut.name}`);
     setSelectedHaircut(haircut);
+    navigate("/ticket", { state: { selectedHaircut: haircut } });
   };
 
   const handleDateChange = (date, haircutId) => {
@@ -38,18 +40,6 @@ const Services = () => {
   const filteredStyles = haircutStylesData.filter((style) =>
     style.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const handleHaircutSelection = (style) => {
-    setSelectedHaircut((prevSelectedHaircut) => {
-      if (prevSelectedHaircut && prevSelectedHaircut.id === style.id) {
-        // If the same style is clicked again, set the selectedHaircut to null
-        return null;
-      } else {
-        // Otherwise, set the selectedHaircut to the new style
-        return style;
-      }
-    });
-  };
 
   return (
     <div className="bg-primary overflow-y-auto max-h-screen">
@@ -76,7 +66,6 @@ const Services = () => {
               key={style.id}
               className="bg-customColor-cardcolor p-4 rounded-lg shadow-lg transition duration-300"
             >
-              {" "}
               <h2 className="text-2xl text-customColor-colortext font-semibold mb-2">
                 {style.name}
               </h2>
@@ -84,14 +73,7 @@ const Services = () => {
               <p className="text-customColor-colortext">{style.description}</p>
               <label className="flex font-semibold items-center space-x-2">
                 <span>Select</span>
-                <input
-                  type="radio"
-                  name="haircutSelection"
-                  onChange={() => handleHaircutSelection(style)}
-                  checked={
-                    selectedHaircut && style && selectedHaircut.id === style.id
-                  }
-                />
+                <input type="radio" name="haircutSelection" />
               </label>
               <div className="flex items-center justify-center">
                 <img
@@ -110,20 +92,15 @@ const Services = () => {
                 onSelectTime={(time) => handleTimeChange(time, style.id)}
               />
               <div className="flex-row items-center justify-center inline-flex py-2">
-                <Link
-                  to={{
-                    pathname: "/ticket",
-                    state: { selectedHaircut },
-                  }}
+                <button
+                  onClick={() => handleBookNow(style)}
+                  checked={
+                    selectedHaircut && style && selectedHaircut.id === style.id
+                  }
+                  className="bg-customColor-action hover:bg-customColor-hover text-gray-700 py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
                 >
-                  <button
-                    onClick={() => handleBookNow(style)}
-                    disabled={!selectedHaircut}
-                    className="bg-customColor-action hover:bg-customColor-hover text-gray-700 py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
-                  >
-                    Book Now
-                  </button>
-                </Link>
+                  Book Now
+                </button>
 
                 <span className="text-2xl pl-14">R{style.price}</span>
               </div>
@@ -131,13 +108,6 @@ const Services = () => {
           ))}
         </div>
       </div>
-      {filteredStyles.map((style) => (
-        <Link
-          key={style.id}
-          to={`/services/${style.id}`}
-          className="block text-customColor-colortext py-2"
-        ></Link>
-      ))}
     </div>
   );
 };

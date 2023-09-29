@@ -9,6 +9,8 @@ const Ticket = () => {
   const location = useLocation();
   const selectedHaircut = location.state && location.state.selectedHaircut;
 
+  console.log("Selected Haircut Data:", selectedHaircut);
+
   if (!selectedHaircut) {
     return (
       <div className="bg-primary overflow-y-auto max-h-screen">
@@ -52,7 +54,7 @@ const Ticket = () => {
     <div className="bg-primary overflow-y-auto max-h-screen">
       <Navbar />
       <div className="flex flex-col space-y-2 justify-center items-center h-screen">
-        <div className="relative bg-customColor-cardcolor text-customColor-colortext p-6 shadow-lg m-4">
+        <div className="relative rounded-lg bg-customColor-cardcolor text-customColor-colortext p-6 shadow-lg m-4">
           <span>
             <h1 className="flex flex-row items-center gap-4 text-4xl font-bold mb-4">
               Your Ticket <img className="w-8" src={Award} alt="Award" />
@@ -77,7 +79,7 @@ const Ticket = () => {
             <TicketElements count={11} />
           </div> */}
         </div>
-        <Link to="/services">
+        <Link to="/checkout">
           <button className="bg-customColor-action hover:bg-customColor-hover text-zinc-700 py-2 px-4 rounded-lg shadow-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300">
             Confirm Booking
           </button>
