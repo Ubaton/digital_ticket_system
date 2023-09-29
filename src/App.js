@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route
           path="/ticket"
-          element={<Ticket selectedHaircut={selectedOffer} />} // Pass selectedOffer as a prop to Ticket
+          element={<Ticket selectedHaircut={selectedOffer} />}
         />
         <Route
           path="/offerselection"

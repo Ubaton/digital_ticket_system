@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
 
-const Checkout = ({ selectedItems, totalPrice }) => {
+const Checkout = ({ selectedHaircut, totalPrice }) => {
   const [shippingInfo, setShippingInfo] = useState({
     name: "",
     address: "",
@@ -28,42 +29,89 @@ const Checkout = ({ selectedItems, totalPrice }) => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
-      <h3 className="text-lg font-semibold mb-2">Selected Items:</h3>
-      <ul>
-        {selectedItems.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price} R
-          </li>
-        ))}
-      </ul>
-      <p className="text-lg font-semibold mt-4">Total Price: {totalPrice} R</p>
-      <div className="mt-4">
-        <h3 className="text-lg font-semibold mb-2">Shipping Information:</h3>
-        <form>
-          {/* Shipping info fields (same as previous code) */}
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={shippingInfo.name}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-lg"
-            />
+    <div className="bg-primary">
+      <Navbar />
+      <div className="flex flex-col items-center justify-center pt-20 w-full overflow-y-auto h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="mt-4 p-4">
+            <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
+            <h3 className="text-lg font-semibold mb-2">Selected Item:</h3>
+            <p>
+              {selectedHaircut ? (
+                <span>
+                  {selectedHaircut.name} - {selectedHaircut.price} R
+                </span>
+              ) : (
+                "No item selected"
+              )}
+            </p>
+            <p className="text-lg font-semibold mt-4">
+              Total Price: {totalPrice} R
+            </p>
           </div>
-          {/* Add other shipping info fields (address, city, postalCode) here */}
-        </form>
+          <div className="mt-4 p-4">
+            <h3 className="text-lg font-semibold mb-2">
+              Shipping Information:
+            </h3>
+            <form>
+              <div className="mb-4">
+                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={shippingInfo.name}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded-lg"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                  Address
+                </label>
+                <input
+                  type="text"
+                  name="address"
+                  value={shippingInfo.address}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded-lg"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                  City
+                </label>
+                <input
+                  type="text"
+                  name="city"
+                  value={shippingInfo.city}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded-lg"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block border-customColor-colortext text-sm font-bold mb-2">
+                  Postal Code
+                </label>
+                <input
+                  type="text"
+                  name="postalCode"
+                  value={shippingInfo.postalCode}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded-lg"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <button
+          onClick={handleCheckout}
+          className="bg-blue-500 text-white py-2 px-4 mt-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+        >
+          Proceed to Payment
+        </button>
       </div>
-      <button
-        onClick={handleCheckout}
-        className="bg-blue-500 text-white py-2 px-4 mt-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
-      >
-        Proceed to Payment
-      </button>
     </div>
   );
 };
