@@ -3,10 +3,10 @@ import Navbar from "../Navbar/Navbar";
 
 const Checkout = ({ selectedHaircut, totalPrice }) => {
   const [shippingInfo, setShippingInfo] = useState({
-    name: "",
-    address: "",
-    city: "",
-    postalCode: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
   });
 
   const handleChange = (e) => {
@@ -31,10 +31,10 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
   return (
     <div className="bg-primary">
       <Navbar />
-      <div className="flex flex-col items-center justify-center pt-20 w-full overflow-y-auto h-screen">
+      <div className="flex flex-col items-center justify-center pt-28 w-full overflow-y-auto h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
           <div className="mt-4 p-4">
-            <h2 className="text-2xl font-semibold mb-4 text-customColor-colortext">
+            <h2 className="text-4xl font-semibold mb-4 text-customColor-colortext">
               Checkout
             </h2>
             <h3 className="text-lg font-semibold mb-2 text-customColor-colortext">
@@ -52,69 +52,71 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
             <p className="text-lg font-semibold mt-4 text-customColor-colortext">
               Total Price: {totalPrice} R
             </p>
+            <div className="pt-8">
+              <button
+                onClick={handleCheckout}
+                className="w-full md:w-auto text-zinc-950 bg-customColor-action hover:bg-customColor-hover py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
+              >
+                Proceed to Payment
+              </button>
+            </div>
           </div>
           <div className="mt-4 p-4">
-            <h3 className="text-lg font-semibold mb-2 text-customColor-colortext">
-              Shipping Information:
+            <h3 className="text-4xl font-semibold mb-2 text-customColor-colortext">
+              Booking for:
             </h3>
             <form>
               <div className="mb-4">
                 <label className="block text-customColor-colortext text-sm font-bold mb-2">
-                  Name
+                  First Name
                 </label>
                 <input
                   type="text"
-                  name="name"
-                  value={shippingInfo.name}
+                  name="firstname"
+                  value={shippingInfo.firstname}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-lg"
+                  className="w-full px-3 py-2 bg-primary3 border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
                 <label className="block text-customColor-colortext text-sm font-bold mb-2">
-                  Address
+                  Last Name
                 </label>
                 <input
                   type="text"
-                  name="address"
-                  value={shippingInfo.address}
+                  name="lastname"
+                  value={shippingInfo.lastname}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-lg"
+                  className="w-full px-3 py-2 bg-primary3 border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
                 <label className="block text-customColor-colortext text-sm font-bold mb-2">
-                  City
+                  Email Address
                 </label>
                 <input
                   type="text"
-                  name="city"
-                  value={shippingInfo.city}
+                  name="email"
+                  value={shippingInfo.email}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-lg"
+                  className="w-full px-3 py-2 bg-primary3 border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
               <div className="mb-4">
                 <label className="block text-customColor-colortext text-sm font-bold mb-2">
-                  Postal Code
+                  Phone Number
                 </label>
                 <input
                   type="text"
-                  name="postalCode"
-                  value={shippingInfo.postalCode}
+                  name="phone"
+                  value={shippingInfo.phone}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-lg"
+                  className="w-full px-3 py-2 bg-primary3 border border-primary2 rounded-md focus:outline-none focus:ring focus:border-primary2"
                 />
               </div>
             </form>
           </div>
         </div>
-        <button
-          onClick={handleCheckout}
-          className="w-full md:w-auto text-zinc-950 bg-customColor-action hover:bg-customColor-hover py-2 px-4 rounded-lg focus:outline-none focus:ring focus:border-blue-700 transition duration-300"
-        >
-          Proceed to Payment
-        </button>
       </div>
     </div>
   );
