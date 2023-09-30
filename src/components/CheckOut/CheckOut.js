@@ -31,8 +31,8 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
   return (
     <div className="bg-primary">
       <Navbar />
-      <div className="flex flex-col items-center justify-center pt-28 w-full overflow-y-auto h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto">
+      <div className="flex flex-col items-center justify-center pt-20 w-full overflow-y-auto min-h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto bg-primary2 rounded-lg">
           <div className="mt-4 p-4">
             <h2 className="text-4xl font-semibold mb-4 text-customColor-colortext">
               Checkout
