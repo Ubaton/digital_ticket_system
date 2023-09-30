@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Checkout = ({ selectedHaircut, totalPrice }) => {
   const [shippingInfo, setShippingInfo] = useState({
@@ -14,17 +16,51 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
     setShippingInfo({ ...shippingInfo, [name]: value });
   };
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     // Validate and confirm booking time constraints here
     const isValidBookingTime = true; // Replace with your booking time validation logic
 
     if (isValidBookingTime) {
-      // Perform checkout logic, e.g., submit order, calculate total, etc.
-      // You can implement this function based on your backend and business logic.
-      // For now, we'll simply display a success message.
-      alert("Order placed successfully!");
+      try {
+        // Prepare the order data to send to your backend (example)
+        const orderData = {
+          selectedHaircut, // The selected haircut data
+          shippingInfo, // The shipping information
+          totalPrice, // The total price
+        };
+
+        // Send a POST request to your backend to submit the order
+        const response = await fetch("/api/checkout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderData),
+        });
+
+        if (response.ok) {
+          // Order successfully submitted
+          toast.success("Order placed successfully!");
+          // Optionally, you can redirect the user to a thank-you page or clear the cart.
+          // For example, you can use react-router to navigate:
+          // useNavigate.push('/thankyou');
+        } else {
+          // Handle errors from the backend
+          const errorData = await response.json();
+          toast.error(`Error: ${errorData.message}`);
+        }
+      } catch (error) {
+        // Handle network errors or other exceptions
+        toast.error(
+          "An error occurred while processing your order. Please try again later."
+        );
+        console.error(error);
+      }
     } else {
-      alert("Booking time constraints not met. Please choose a valid time.");
+      // Display an error message using react-toastify.
+      toast.error(
+        "Booking time constraints not met. Please choose a valid time."
+      );
     }
   };
 
@@ -32,7 +68,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
     <div className="bg-primary">
       <Navbar />
       <div className="flex flex-col items-center justify-center pt-20 w-full overflow-y-auto min-h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto bg-primary2 rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl bg-primary2 rounded-lg">
           <div className="mt-4 p-4">
             <h2 className="text-4xl font-semibold mb-4 text-customColor-colortext">
               Checkout
@@ -50,7 +86,7 @@ const Checkout = ({ selectedHaircut, totalPrice }) => {
               )}
             </p>
             <p className="text-lg font-semibold mt-4 text-customColor-colortext">
-              Total Price: {totalPrice} R
+              Total Price: R {totalPrice}
             </p>
             <div className="pt-8">
               <button

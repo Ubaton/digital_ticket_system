@@ -16,22 +16,33 @@ const Services = () => {
 
   const handleBookNow = (haircut) => {
     console.log(`Selected Haircut: ${haircut.name}`);
+    console.log(`Selected Date: ${haircut.date}`);
+    console.log(`Selected Time: ${haircut.time}`);
+
     setSelectedHaircut(haircut);
-    navigate("/ticket", { state: { selectedHaircut: haircut } });
+
+    // Include date and time in the object being passed
+    navigate("/ticket", {
+      state: {
+        selectedHaircut: { ...haircut, date: haircut.date, time: haircut.time },
+      },
+    });
   };
 
   const handleDateChange = (date, haircutId) => {
+    console.log("Date selected:", date);
     setHaircutStylesData((prevStyles) =>
       prevStyles.map((style) =>
-        style.id === haircutId ? { ...style, date } : style
+        style.id === haircutId ? { ...style, date: date || null } : style
       )
     );
   };
 
   const handleTimeChange = (time, haircutId) => {
+    console.log("Time selected:", time);
     setHaircutStylesData((prevStyles) =>
       prevStyles.map((style) =>
-        style.id === haircutId ? { ...style, time } : style
+        style.id === haircutId ? { ...style, time: time || null } : style
       )
     );
   };
@@ -84,11 +95,11 @@ const Services = () => {
               </div>
               {/* Date and Time Selection */}
               <DateSelection
-                selectedDate={style.date}
+                selectedDate={style.date || null}
                 onSelectDate={(date) => handleDateChange(date, style.id)}
               />
               <TimeSelection
-                selectedTime={style.time}
+                selectedTime={style.time || null}
                 onSelectTime={(time) => handleTimeChange(time, style.id)}
               />
               <div className="flex-row items-center justify-center inline-flex py-2">

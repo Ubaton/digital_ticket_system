@@ -70,10 +70,8 @@ const Ticket = () => {
           </div>
           <div className="border-2 border-dashed border-customColor-colortext"></div>
           <div className="mt-4 text-sm">
-            <p className="font-semibold">Confirmed On</p>
-            Date: {new Date().toLocaleDateString()}
-            <br />
-            Time: {new Date().toLocaleTimeString()}
+            <p>Date: {selectedHaircut.date || "Not specified"}</p>
+            <p>Time: {selectedHaircut.time || "Not specified"}</p>
           </div>
           {/* <div className="absolute flex flex-row items-center justify-center pr-12 rotate-90">
             <TicketElements count={11} />

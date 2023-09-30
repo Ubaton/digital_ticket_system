@@ -9,6 +9,8 @@ import OfferSelection from "./components/Selection/OfferSelection";
 import About from "./components/pages/About/About";
 import Contact from "./components/pages/Contact/Contact";
 import Checkout from "./components/CheckOut/CheckOut";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   // Define state to hold the selected offer
@@ -43,6 +45,7 @@ const App = () => {
           element={<Checkout selectedItems={selectedItems} />}
         />
       </Routes>
+      <ToastContainer />
     </Router>
   );
 };

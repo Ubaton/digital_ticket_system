@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const DateSelection = ({ selectedDate, onSelectDate }) => {
   const handleDateChange = (date) => {
-    onSelectDate(date);
+    onSelectDate(date.toLocaleDateString());
   };
 
   return (
