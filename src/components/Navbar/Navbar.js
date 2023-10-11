@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoTop from "../assets/images/Logotop.png";
+import Cart from "../assets/icons/haircut.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +30,24 @@ const Navbar = () => {
 
         {/* Mobile Menu Button (hidden on desktop) */}
         <div className="block sm:hidden">
-          <button
-            onClick={toggleNavbar}
-            className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
+          <div className="flex flex-row">
+            <Link
+              to="#"
+              className="text-customColor-colortext hover:text-gray-300"
+            >
+              <img src={Cart} alt="" className="mr-2 w-6 h-6" />
+            </Link>
+            <button
+              onClick={toggleNavbar}
+              className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+            >
+              {isOpen ? (
+                <X className="text-customColor-colortext" />
+              ) : (
+                <Menu className="text-customColor-colortext" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Desktop Menu (hidden on mobile) */}
@@ -68,6 +81,12 @@ const Navbar = () => {
             className="text-customColor-colortext hover:text-gray-300"
           >
             Contact
+          </Link>
+          <Link
+            to="#"
+            className="text-customColor-colortext hover:text-gray-300"
+          >
+            <img src={Cart} alt="" className="mr-2 w-6 h-6" />
           </Link>
         </div>
       </div>
